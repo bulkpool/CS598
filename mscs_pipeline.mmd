@@ -1,0 +1,20 @@
+graph TD
+    A[r/MSCS Subreddit] -->|Reddit API/Scraper| B(r_MSCS_posts.jsonl)
+    A -->|Reddit API/Scraper| C(r_MSCS_comments.jsonl)
+    
+    B --> D{Data Cleaning Stage 1: \n Load & Select Columns}
+    C --> D
+    
+    D --> E{Stage 2 & 3: \n Remove Deleted/Removed Noise}
+    E -->|Drops ~400 Records| F{Stage 4: \n Remove Bot Authors}
+    F -->|Drops ~55 Records| G{Stage 5: \n Deduplication}
+    
+    G --> H{Stage 6: \n Text Normalization\n (URLs, Markdown, Whitespace)}
+    
+    H --> I{Stage 7: \n Timestamp Parsing & Date Filter \n (Aug 2023 - Jul 2025)}
+    
+    I --> J[posts_clean Dataset]
+    I --> K[comments_clean Dataset]
+    
+    J --> L((Methodological \n Analysis))
+    K --> L
