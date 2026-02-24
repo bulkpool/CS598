@@ -1,0 +1,17 @@
+# ── Raw & cleaned data files ─────────────────────────────────────────────────
+# These are large binary/text datasets that should not be tracked in git.
+# Share them via cloud storage (Drive, S3, etc.) or a data registry instead.
+*.jsonl
+r_MSCS_cleaning_stats.json
+
+# ── Notebook output artefacts ─────────────────────────────────────────────────
+*.png
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# ── Env ───────────────────────────────────────────────────────────────────────
+.env
+*.env
